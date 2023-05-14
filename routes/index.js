@@ -5,7 +5,7 @@ const homeController = require('../controller/homeController');
 const projectRouter = require('./projectRouter');
 const issueRouter = require('./issueRouter');
 
-router.get('/', homeController);
+router.get('/', homeController.home);
 router.use('/projects', projectRouter);
 router.use('/issues', issueRouter);
 

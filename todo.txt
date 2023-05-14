@@ -1,4 +1,6 @@
 1 - display all projects on home page
 to do this make an api to get all projects and display at home page
 
+trim project description
+
 Display notifications when project created succesfully etc
