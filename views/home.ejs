@@ -25,13 +25,29 @@
       <main>
         <div class="modal-container" id="modal-container">
           <div class="modal">
-            <h3>Enter New Project Details</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              blanditiis, molestias laborum, adipisci eveniet molestiae est
-              soluta accusamus odit veniam nisi tenetur, optio modi porro eum
-              esse neque vero architecto?
-            </p>
+            <h3>Please Enter New Project Details</h3>
+            <form action="" method="post">
+              <div class="form-input-fields flex">
+                <h4>Project Title</h4>
+                <input id="project-title-input" class="modal-inputs" required />
+                <h4>Project Description</h4>
+                <textarea
+                  required
+                  name="project-description"
+                  rows="5"
+                  cols="55"
+                  class="modal-inputs description-text-area"
+                  id="project-description-input"
+                ></textarea>
+              </div>
+              <button
+                id="create-project-modal-btn"
+                type="submit"
+                class="primary-btn"
+              >
+                Create Project
+              </button>
+            </form>
             <button id="create-project-close-modal-btn" class="primary-btn">
               Close
             </button>

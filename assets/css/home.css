@@ -85,7 +85,21 @@ main {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+.modal-inputs {
+  width: 100%;
+  padding: 10px 20px;
+}
+.description-text-area {
+  font-family: 'Poppins', sans-serif;
+}
+/* form styles in modal */
+.form-input-fields {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
 
+/* button styles */
 .primary-btn {
   background-color: #47a386;
   border-radius: 6px;
@@ -96,7 +110,13 @@ main {
   transition: 0.2s ease-out;
 }
 .primary-btn:hover {
-  background-color: ghostwhite;
+  background-color: #377e67;
+}
+#create-project-close-modal-btn {
+  margin-top: 10px;
+}
+#create-project-modal-btn {
+  margin-top: 10px;
 }
 
 /* footer styles */
