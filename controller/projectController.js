@@ -2,12 +2,16 @@ const Project = require('../models/project');
 
 module.exports = {
   create: async (req, res) => {
-    const { 'project-title': title, 'project-description': description } =
-      req.body;
+    const {
+      'project-title': title,
+      'project-description': description,
+      'project-author': author,
+    } = req.body;
     try {
       const p = await Project.create({
         title,
         description,
+        author,
       });
       console.log('Project created!', p);
     } catch (error) {
