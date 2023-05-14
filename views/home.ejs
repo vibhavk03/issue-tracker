@@ -26,10 +26,15 @@
         <div class="modal-container" id="modal-container">
           <div class="modal">
             <h3>Please Enter New Project Details</h3>
-            <form action="" method="post">
+            <form action="/projects/create" method="post">
               <div class="form-input-fields flex">
                 <h4>Project Title</h4>
-                <input id="project-title-input" class="modal-inputs" required />
+                <input
+                  id="project-title-input"
+                  class="modal-inputs"
+                  name="project-title"
+                  required
+                />
                 <h4>Project Description</h4>
                 <textarea
                   required

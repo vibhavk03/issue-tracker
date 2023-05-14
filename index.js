@@ -16,12 +16,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
 
-// home page
-app.get('/', function (req, res) {
-  res.render('home', {
-    test: 'yay express connected to ejs',
-  });
-});
+/* routing all requests here */
+app.use('/', require('./routes'));
 
 app.listen(port, (err) => {
   if (err) {
