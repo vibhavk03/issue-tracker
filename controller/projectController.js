@@ -28,4 +28,15 @@ module.exports = {
     }
     res.redirect('back');
   },
+  getProject: async (req, res) => {
+    try {
+      const project = await Project.findById(req.params.id);
+      res.render('project', {
+        project,
+      });
+    } catch (error) {
+      console.log(`Error in fetching a project : ${error}`);
+      res.redirect('back');
+    }
+  },
 };

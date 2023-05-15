@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue Tracker 🛠️</title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header class="flex">
+        <div id="header-heading">
+          <a href="/">
+            <h3>Issue Tracker</h3>
+          </a>
+        </div>
+        <div id="header-options">
+          <button id="" class="primary-btn">Create New Issue</button>
+        </div>
+      </header>
+
+      <main>
+        <div id="projects-display" class="flex"><%- include('_project') %></div>
+
+        <div class="modal-container" id="modal-container">
+          <%- include('_modal') %>
+        </div>
+      </main>
+
+      <%- include('_footer') %>
+      <script src="/js/home.js"></script>
+    </div>
+  </body>
+</html>
