@@ -15,13 +15,15 @@
             <h3>Issue Tracker</h3>
           </a>
         </div>
-        <div id="header-options">
-          <button id="" class="primary-btn">Create New Issue</button>
-        </div>
+        <button id="create-project-btn" class="primary-btn">
+          Create New Project
+        </button>
       </header>
 
       <main>
-        <div id="projects-display" class="flex"><%- include('_project') %></div>
+        <div id="projects-display" class="flex">
+          <%- include('_projectPageProjectTile') %>
+        </div>
 
         <div class="modal-container" id="modal-container">
           <%- include('_modal') %>

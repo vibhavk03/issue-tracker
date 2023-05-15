@@ -17,7 +17,7 @@ module.exports = {
     } catch (error) {
       console.log(`Error in creating a project : ${error}`);
     }
-    res.redirect('back');
+    res.redirect('/');
   },
   deleteFromHome: async (req, res) => {
     try {
@@ -26,12 +26,12 @@ module.exports = {
     } catch (error) {
       console.log(`Error in deleteing a project : ${error}`);
     }
-    res.redirect('back');
+    res.redirect('/');
   },
   getProject: async (req, res) => {
     try {
       const project = await Project.findById(req.params.id);
-      res.render('project', {
+      res.render('projectPage', {
         project,
       });
     } catch (error) {

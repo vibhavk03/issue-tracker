@@ -1,0 +1,17 @@
+<div class="project-container flex" id="project-<%= project._id %>">
+  <div class="project-title"><%= project.title %></div>
+  <div class="project-description"><%= project.description %></div>
+  <div class="project-author">Author: <span><%= project.author %></span></div>
+  <div class="project-buttons flex">
+    <form action="/project/<%= project._id %>" method="get" class="">
+      <button id="" class="primary-btn secondary-btn">Create New Issue</button>
+    </form>
+    <form
+      action="/project/home/delete/<%= project._id %>"
+      method="post"
+      class=""
+    >
+      <button id="" class="primary-btn delete-btn">Delete Project</button>
+    </form>
+  </div>
+</div>
