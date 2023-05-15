@@ -1,6 +1,10 @@
 1 - display all projects on home page
 to do this make an api to get all projects and display at home page
+if length of projects array is 0 then don't render anything
+otherwise render using for loop
 
 trim project description
+
+see required schema for issue
 
 Display notifications when project created succesfully etc
