@@ -1,7 +1,6 @@
-1 - display all projects on home page
-to do this make an api to get all projects and display at home page
-if length of projects array is 0 then don't render anything
-otherwise render using for loop
+1 - display delete button on the main project tile
+add delete button
+create a delete route for project
 
 trim project description
 

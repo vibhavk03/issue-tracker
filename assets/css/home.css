@@ -122,6 +122,15 @@ main {
 .secondary-btn {
   background-color: #5d8aa8;
 }
+.secondary-btn:hover {
+  background-color: #46687e;
+}
+.delete-btn {
+  background-color: #be4156;
+}
+.delete-btn:hover {
+  background-color: #8b2e3d;
+}
 
 /* projects display */
 #projects-display {
@@ -142,6 +151,11 @@ main {
 }
 .project-title {
   font-weight: 700;
+}
+.project-buttons {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* .project-author span {
   text-transform: uppercase;

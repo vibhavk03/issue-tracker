@@ -2,7 +2,12 @@
   <div class="project-title"><%= project.title %></div>
   <div class="project-description"><%= project.description %></div>
   <div class="project-author">Author: <span><%= project.author %></span></div>
-  <form action="/project/<%= project._id %>" class="">
-    <button id="" class="primary-btn secondary-btn">Project Details</button>
-  </form>
+  <div class="project-buttons flex">
+    <form action="/project/<%= project._id %>" method="post" class="">
+      <button id="" class="primary-btn secondary-btn">Project Details</button>
+    </form>
+    <form action="/project/<%= project._id %>" method="delete" class="">
+      <button id="" class="primary-btn delete-btn">Delete Project</button>
+    </form>
+  </div>
 </div>
