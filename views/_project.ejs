@@ -1,0 +1,8 @@
+<div class="project-container flex" id="project-<%= project._id %>">
+  <div class="project-title"><%= project.title %></div>
+  <div class="project-description"><%= project.description %></div>
+  <div class="project-author">Author: <span><%= project.author %></span></div>
+  <form action="/project/<%= project._id %>" class="">
+    <button id="" class="primary-btn secondary-btn">Project Details</button>
+  </form>
+</div>

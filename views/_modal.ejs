@@ -1,0 +1,34 @@
+<div class="modal">
+  <h3>Please Enter New Project Details</h3>
+  <form action="/projects/create" method="post">
+    <div class="form-input-fields flex">
+      <h4>Project Title</h4>
+      <input
+        id="project-title-input"
+        class="modal-inputs"
+        name="project-title"
+        required
+      />
+      <h4>Project Description</h4>
+      <textarea
+        required
+        name="project-description"
+        rows="5"
+        cols="55"
+        class="modal-inputs description-text-area"
+        id="project-description-input"
+      ></textarea>
+      <h4>Project Author</h4>
+      <input
+        id="project-author-input"
+        class="modal-inputs"
+        name="project-author"
+        required
+      />
+    </div>
+    <button id="create-project-modal-btn" type="submit" class="primary-btn">
+      Create Project
+    </button>
+  </form>
+  <button id="create-project-close-modal-btn" class="primary-btn">Close</button>
+</div>

@@ -24,109 +24,11 @@
 
       <main>
         <div id="projects-display" class="flex">
-          <div class="project-container flex">
-            <div class="project-title">Project 1</div>
-            <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-              culpa quisquam labore quia vel similique fuga quam repellat,
-              quaerat alias? Reiciendis cum voluptatum corporis ex quis
-              recusandae exercitationem sint maiores?
-            </div>
-            <div class="project-author">Author: <span>Author 1</span></div>
-            <form action="/" class="">
-              <button id="" class="primary-btn secondary-btn">
-                Project Details
-              </button>
-            </form>
-          </div>
-          <div class="project-container flex">
-            <div class="project-title">Project 1</div>
-            <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-              culpa quisquam labore quia vel similique fuga quam repellat,
-              quaerat alias? Reiciendis cum voluptatum corporis ex quis
-              recusandae exercitationem sint maiores?
-            </div>
-            <div class="project-author">Author: <span>Author 1</span></div>
-            <form action="/" class="">
-              <button id="" class="primary-btn secondary-btn">
-                Project Details
-              </button>
-            </form>
-          </div>
-          <div class="project-container flex">
-            <div class="project-title">Project 1</div>
-            <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-              culpa quisquam labore quia vel similique fuga quam repellat,
-              quaerat alias? Reiciendis cum voluptatum corporis ex quis
-              recusandae exercitationem sint maiores?
-            </div>
-            <div class="project-author">Author: <span>Author 1</span></div>
-            <form action="/" class="">
-              <button id="" class="primary-btn secondary-btn">
-                Project Details
-              </button>
-            </form>
-          </div>
-          <div class="project-container flex">
-            <div class="project-title">Project 1</div>
-            <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-              culpa quisquam labore quia vel similique fuga quam repellat,
-              quaerat alias? Reiciendis cum voluptatum corporis ex quis
-              recusandae exercitationem sint maiores?
-            </div>
-            <div class="project-author">Author: <span>Author 1</span></div>
-            <form action="/" class="">
-              <button id="" class="primary-btn secondary-btn">
-                Project Details
-              </button>
-            </form>
-          </div>
+          <% for (project of projects) { %> <%- include('_project') %> <% } %>
         </div>
 
         <div class="modal-container" id="modal-container">
-          <div class="modal">
-            <h3>Please Enter New Project Details</h3>
-            <form action="/projects/create" method="post">
-              <div class="form-input-fields flex">
-                <h4>Project Title</h4>
-                <input
-                  id="project-title-input"
-                  class="modal-inputs"
-                  name="project-title"
-                  required
-                />
-                <h4>Project Description</h4>
-                <textarea
-                  required
-                  name="project-description"
-                  rows="5"
-                  cols="55"
-                  class="modal-inputs description-text-area"
-                  id="project-description-input"
-                ></textarea>
-                <h4>Project Author</h4>
-                <input
-                  id="project-author-input"
-                  class="modal-inputs"
-                  name="project-author"
-                  required
-                />
-              </div>
-              <button
-                id="create-project-modal-btn"
-                type="submit"
-                class="primary-btn"
-              >
-                Create Project
-              </button>
-            </form>
-            <button id="create-project-close-modal-btn" class="primary-btn">
-              Close
-            </button>
-          </div>
+          <%- include('_modal') %>
         </div>
       </main>
 
