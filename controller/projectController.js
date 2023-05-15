@@ -19,4 +19,13 @@ module.exports = {
     }
     res.redirect('back');
   },
+  deleteFromHome: async (req, res) => {
+    try {
+      const p = await Project.findByIdAndRemove(req.params.id);
+      console.log('Project removed!', p);
+    } catch (error) {
+      console.log(`Error in deleteing a project : ${error}`);
+    }
+    res.redirect('back');
+  },
 };

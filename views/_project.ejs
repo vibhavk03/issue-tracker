@@ -6,7 +6,11 @@
     <form action="/project/<%= project._id %>" method="post" class="">
       <button id="" class="primary-btn secondary-btn">Project Details</button>
     </form>
-    <form action="/project/<%= project._id %>" method="delete" class="">
+    <form
+      action="/project/home/delete/<%= project._id %>"
+      method="post"
+      class=""
+    >
       <button id="" class="primary-btn delete-btn">Delete Project</button>
     </form>
   </div>
