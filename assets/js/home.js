@@ -8,13 +8,15 @@ const projectDescriptionInput = document.getElementById(
 );
 const projectAuthorInput = document.getElementById('project-author-input');
 
+/* show modal when create button clicked */
 createProjectBtn.addEventListener('click', () => {
   modalContainer.classList.add('show-modal');
 });
 
+/* hide modal and clear details when close button clicked */
 closeModalBtn.addEventListener('click', () => {
   modalContainer.classList.remove('show-modal');
-  /* removea any left over values from modal */
+  /* remove any left over values from modal */
   projectTitleInput.value = '';
   projectDescriptionInput.value = '';
   projectAuthorInput.value = '';
