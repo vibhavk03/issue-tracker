@@ -1,9 +1,11 @@
-1 - display delete button on the main project tile
-add delete button
-create a delete route for project
+1 - create a modal to create an issue on projects page
+2 - see required schema for issue and make those changes in db schema
 
+2 - display all issues on projects page
+
+3 - add filter functionality on issues
+
+maybe increase width of project display tile on projects page
 trim project description
-
-see required schema for issue
 
 Display notifications when project created succesfully etc

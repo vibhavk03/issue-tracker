@@ -43,6 +43,10 @@ ul {
   align-items: center;
 }
 
+.mg-top-10 {
+  margin-top: 10px;
+}
+
 /* page elements */
 header {
   justify-content: space-between;
@@ -98,6 +102,11 @@ main {
   flex-direction: column;
   gap: 5px;
 }
+/* new issue modal */
+.modal-checkbox {
+  flex-wrap: wrap;
+  gap: 5px;
+}
 
 /* button styles */
 .primary-btn {
@@ -112,12 +121,6 @@ main {
 }
 .primary-btn:hover {
   background-color: #377e67;
-}
-#create-project-close-modal-btn {
-  margin-top: 10px;
-}
-#create-project-modal-btn {
-  margin-top: 10px;
 }
 .secondary-btn {
   background-color: #5d8aa8;
