@@ -1,0 +1,114 @@
+<div class="modal">
+  <h3>Please Enter New Issue Details</h3>
+  <form action="/issue/create" method="post">
+    <div class="form-input-fields flex">
+      <h4>Issue Title</h4>
+      <input
+        id="issue-title-input"
+        class="modal-inputs"
+        name="issue-title"
+        required
+      />
+      <h4>Issue Labels</h4>
+      <div class="flex modal-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox-labels"
+          id="checkbox-1"
+          value="Bug Fix"
+          class="checkbox-labels"
+        />
+        <label for="checkbox-1">Bug Fix</label>
+      </div>
+      <div class="flex modal-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox-labels"
+          id="checkbox-2"
+          value="Bug Fix"
+          class="checkbox-labels"
+        />
+        <label for="checkbox-2">New Feature</label>
+      </div>
+      <div class="flex modal-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox-labels"
+          id="checkbox-3"
+          value="Frontend"
+          class="checkbox-labels"
+        />
+        <label for="checkbox-3">Frontend</label>
+      </div>
+      <div class="flex modal-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox-labels"
+          id="checkbox-4"
+          value="Backend"
+          class="checkbox-labels"
+        />
+        <label for="checkbox-4">Backend</label>
+      </div>
+      <div class="flex modal-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox-labels"
+          id="checkbox-5"
+          value="Prod Issue"
+          class="checkbox-labels"
+        />
+        <label for="checkbox-5">Prod Issue</label>
+      </div>
+      <div class="flex modal-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox-labels"
+          id="checkbox-6"
+          value="Refinement"
+          class="checkbox-labels"
+        />
+        <label for="checkbox-6">Refinement</label>
+      </div>
+      <div class="flex modal-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox-labels"
+          id="checkbox-7"
+          value="Documentation"
+          class="checkbox-labels"
+        />
+        <label for="checkbox-7">Documentation</label>
+      </div>
+      <h4>Issue Description</h4>
+      <textarea
+        required
+        name="issue-description"
+        rows="5"
+        cols="55"
+        class="modal-inputs description-text-area"
+        id="issue-description-input"
+      ></textarea>
+      <h4>Issue Author</h4>
+      <input
+        id="issue-author-input"
+        class="modal-inputs"
+        name="issue-author"
+        required
+      />
+    </div>
+    <button
+      id="create-issue-modal-btn"
+      type="submit"
+      class="primary-btn secondary-btn mg-top-10"
+    >
+      Create Issue
+    </button>
+  </form>
+  <button
+    id="create-issue-close-modal-btn"
+    class="primary-btn delete-btn mg-top-10"
+  >
+    Close
+  </button>
+</div>

@@ -25,6 +25,12 @@
           <%- include('_projectPageProjectTile') %>
         </div>
 
+        <div class="project-issue-display"></div>
+
+        <div class="modal-container" id="modal-container-issue">
+          <%- include('_newIssueModal') %>
+        </div>
+
         <div class="modal-container" id="modal-container">
           <%- include('_modal') %>
         </div>
@@ -32,6 +38,7 @@
 
       <%- include('_footer') %>
       <script src="/js/home.js"></script>
+      <script src="/js/projectPage.js"></script>
     </div>
   </body>
 </html>
