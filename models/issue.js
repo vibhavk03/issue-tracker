@@ -4,10 +4,12 @@ const issueSchema = new mongoose.Schema(
   {
     title: {
       type: String,
+      trim: true,
       required: true,
     },
     description: {
       type: String,
+      trim: true,
       required: true,
     },
     project: {
@@ -15,14 +17,18 @@ const issueSchema = new mongoose.Schema(
       ref: 'Project',
       required: true,
     },
-    raisedBy: {
+    author: {
       type: String,
-      default: '-',
+      trim: true,
+      required: true,
     },
-    assignee: {
-      type: String,
-      default: 'Not assigned yet',
-    },
+    labels: [
+      {
+        type: String,
+        trim: true,
+        required: true,
+      },
+    ],
   },
   {
     timestamps: true,
