@@ -1,6 +1,6 @@
 <div class="modal">
   <h3>Please Enter New Issue Details</h3>
-  <form action="/issue/create" method="post">
+  <form action="/issue/create/<%= project._id %>" method="post">
     <div class="form-input-fields flex">
       <h4>Issue Title</h4>
       <input

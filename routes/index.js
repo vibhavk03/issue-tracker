@@ -7,6 +7,6 @@ const issueRouter = require('./issueRouter');
 
 router.get('/', homeController.home);
 router.use('/project', projectRouter);
-router.use('/issues', issueRouter);
+router.use('/issue', issueRouter);
 
 module.exports = router;
