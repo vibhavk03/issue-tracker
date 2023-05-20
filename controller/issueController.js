@@ -17,13 +17,24 @@ module.exports = {
         labels,
         project: req.params.id,
       });
-      // console.log('Issue created!', issue);
       const project = await Project.findById(req.params.id);
       project.issues.push(issue);
       await project.save();
-      // console.log('Project saved!', project);
     } catch (error) {
       console.log(`Error in creating an issue : ${error}`);
+    }
+    res.redirect('back');
+  },
+  delete: async (req, res) => {
+    try {
+      const issue = await Issue.findByIdAndRemove(req.params.id);
+      const projectId = issue.project;
+      /* removing issue from project issues array */
+      await Project.findByIdAndUpdate(projectId, {
+        $pull: { issues: req.params.id },
+      });
+    } catch (error) {
+      console.log(`Error in deleteing a project : ${error}`);
     }
     res.redirect('back');
   },
