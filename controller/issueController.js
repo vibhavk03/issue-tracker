@@ -18,6 +18,7 @@ module.exports = {
         project: req.params.id,
       });
       const project = await Project.findById(req.params.id);
+      /* pushing issue into project issues array */
       project.issues.push(issue);
       await project.save();
     } catch (error) {

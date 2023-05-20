@@ -5,7 +5,6 @@ module.exports = {
     const projects = await Project.find({}).sort('-createdAt');
     res.render('home', {
       projects,
-      test: 'yay express connected to ejs',
     });
   },
 };
