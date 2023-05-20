@@ -4,7 +4,7 @@ const router = express.Router();
 const projectController = require('../controller/projectController');
 
 router.post('/create', projectController.create);
-router.post('/delete/:id', projectController.deleteFromHome);
-router.get('/:id', projectController.getProject);
+router.post('/delete/:id', projectController.delete);
+router.get('/:id', projectController.get);
 
 module.exports = router;

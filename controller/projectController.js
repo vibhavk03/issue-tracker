@@ -8,27 +8,25 @@ module.exports = {
       'project-author': author,
     } = req.body;
     try {
-      const p = await Project.create({
+      await Project.create({
         title,
         description,
         author,
       });
-      console.log('Project created!', p);
     } catch (error) {
       console.log(`Error in creating a project : ${error}`);
     }
     res.redirect('/');
   },
-  deleteFromHome: async (req, res) => {
+  delete: async (req, res) => {
     try {
-      const p = await Project.findByIdAndRemove(req.params.id);
-      console.log('Project removed!', p);
+      await Project.findByIdAndRemove(req.params.id);
     } catch (error) {
-      console.log(`Error in deleteing a project : ${error}`);
+      console.log(`Error in deleting a project : ${error}`);
     }
     res.redirect('/');
   },
-  getProject: async (req, res) => {
+  get: async (req, res) => {
     try {
       const project = await Project.findById(req.params.id).populate('issues');
       res.render('projectPage', {
