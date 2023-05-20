@@ -47,6 +47,10 @@ ul {
   margin-top: 10px;
 }
 
+.wd-1000 {
+  width: 1000px !important;
+}
+
 /* page elements */
 header {
   justify-content: space-between;
@@ -159,6 +163,36 @@ main {
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#issues-display {
+  padding: 20px 0px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.issue-container {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 700px;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+}
+.issue-labels {
+  flex-direction: row;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.issue-labels span {
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.issue-title {
+  font-weight: bold;
 }
 /* .project-author span {
   text-transform: uppercase;

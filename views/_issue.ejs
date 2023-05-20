@@ -1,0 +1,15 @@
+<div class="issue-container flex" id="issue-<%= project.issues[0]._id %>">
+  <div class="issue-title"><%= issue.title %></div>
+  <div class="issue-labels flex">
+    <% for (label of issue.labels) { %>
+    <span><%= label %></span>
+    <% } %>
+  </div>
+  <div class="issue-description"><%= issue.description %></div>
+  <div class="issue-author">Author: <span><%= issue.author %></span></div>
+  <div class="">
+    <form action="/issue/delete/<%= issue._id %>" method="post" class="">
+      <button id="" class="primary-btn delete-btn">Delete Issue</button>
+    </form>
+  </div>
+</div>
