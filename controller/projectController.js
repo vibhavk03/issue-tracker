@@ -30,7 +30,7 @@ module.exports = {
   },
   getProject: async (req, res) => {
     try {
-      const project = await Project.findById(req.params.id);
+      const project = await Project.findById(req.params.id).populate('issues');
       res.render('projectPage', {
         project,
       });
