@@ -1,4 +1,5 @@
 const Project = require('../models/project');
+const Issue = require('../models/issue');
 
 module.exports = {
   create: async (req, res) => {
@@ -21,6 +22,8 @@ module.exports = {
   delete: async (req, res) => {
     try {
       await Project.findByIdAndRemove(req.params.id);
+      /* delete issues associated with project */
+      await Issue.deleteMany({ project: req.params.id });
     } catch (error) {
       console.log(`Error in deleting a project : ${error}`);
     }
