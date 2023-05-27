@@ -196,6 +196,14 @@ main {
 .issue-title {
   font-weight: bold;
 }
+#issues-header {
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+#issues-header-btns {
+  gap: 50px;
+}
 /* .project-author span {
   text-transform: uppercase;
 } */

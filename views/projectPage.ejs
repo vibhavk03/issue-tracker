@@ -25,13 +25,23 @@
           <%- include('_projectPageProjectTile') %>
         </div>
 
-        <div id="issues-display" class="flex">
+        <div id="issues-header" class="flex">
           <% if (project.issues.length > 0) { %>
           <h3>Project issues</h3>
           <% } else { %>
           <h3>No issues added yet!</h3>
-          <% } %> <% for (issue of project.issues) { %> <%- include('_issue') %>
           <% } %>
+          <div id="issues-header-btns" class="flex">
+            <form action="/project/<%= project._id %>" method="get" class="">
+              <button id="" class="primary-btn secondary-btn">
+                Show All Issues
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="issues-display" class="flex">
+          <% for (issue of project.issues) { %> <%- include('_issue') %> <% } %>
         </div>
 
         <div class="modal-container" id="modal-container-issue">
