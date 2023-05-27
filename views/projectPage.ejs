@@ -37,6 +37,9 @@
                 Show All Issues
               </button>
             </form>
+            <button id="filter-by-author-btn" class="primary-btn secondary-btn">
+              Filter by Author
+            </button>
           </div>
         </div>
 
@@ -50,6 +53,33 @@
 
         <div class="modal-container" id="modal-container">
           <%- include('_modal') %>
+        </div>
+
+        <div id="issues-data" data="<%=JSON.stringify(project.issues)%>"></div>
+
+        <div class="modal-container" id="modal-container-authors">
+          <div class="modal">
+            <h3>Please select Authors for filtering</h3>
+            <form action="" id="populate-author-form">
+              <div id="populate-author-div">
+                <!-- populate author details using javascript -->
+              </div>
+              <button
+                id="filter-authors-modal-btn"
+                type="submit"
+                onclick=""
+                class="primary-btn secondary-btn mg-top-10"
+              >
+                Filter Issues
+              </button>
+            </form>
+            <button
+              id="filter-authors-close-modal-btn"
+              class="primary-btn delete-btn mg-top-10"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </main>
 

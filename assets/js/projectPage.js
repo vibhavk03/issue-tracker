@@ -30,3 +30,116 @@ closeModalBtnProjectPage.addEventListener('click', () => {
     checkbox.checked = false;
   }
 });
+
+/* get issues display from HTML page */
+let issuesRaw = document.getElementById('issues-data').getAttribute('data');
+let issues = JSON.parse(issuesRaw);
+
+/* get all authors from issues data */
+let authors = [];
+issues.forEach((issue) => {
+  const author = issue.author;
+  if (!authors.includes(author)) {
+    authors.push(author);
+  }
+});
+
+const filterByAuthorBtn = document.getElementById('filter-by-author-btn');
+const modalContainerAuthors = document.getElementById(
+  'modal-container-authors'
+);
+const filterAuthorsCloseModalBtn = document.getElementById(
+  'filter-authors-close-modal-btn'
+);
+const closeAuthorModal = () => {
+  modalContainerAuthors.classList.remove('show-modal');
+};
+/* show modal when filter authors button clicked */
+filterByAuthorBtn.addEventListener('click', () => {
+  modalContainerAuthors.classList.add('show-modal');
+});
+/* hide modal and clear details when close button clicked */
+filterAuthorsCloseModalBtn.addEventListener('click', () => {
+  closeAuthorModal();
+  /* remove any checked boxes from modal */
+  for (checkbox of checkboxLabels) {
+    checkbox.checked = false;
+  }
+});
+
+const populateAuthorDiv = document.getElementById('populate-author-div');
+const filterAuthorsModalBtn = document.getElementById(
+  'filter-authors-modal-btn'
+);
+/* clear authors display before rendering authors */
+populateAuthorDiv.innerHTML = '';
+/* populate authors for author filter modal */
+if (authors.length > 0) {
+  authors.forEach((author) => {
+    populateAuthorDiv.innerHTML += `
+    <div class="flex modal-checkbox">
+      <input
+        type="checkbox"
+        name="checkbox-labels"
+        id="checkbox-author-${author}"
+        value="${author}"
+        class="checkbox-labels"
+      />
+      <label for="checkbox-author-${author}">${author}</label>
+    </div>
+    `;
+  });
+} else {
+  /* no issues so no authors available */
+  populateAuthorDiv.innerHTML = '<div><h4>No Authors Available!</h4></div>';
+}
+
+const populateAuthorForm = document.getElementById('populate-author-form');
+const issuesDisplayDiv = document.getElementById('issues-display');
+/* when filter by author form is submitted */
+populateAuthorForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  /* get checked authors from form */
+  const checkedAuthors = Array.from(
+    document.querySelectorAll('input[type=checkbox]:checked')
+  ).map((item) => item.value);
+
+  /* close modal */
+  closeAuthorModal();
+
+  /* filter issues according to checked authors */
+  let filteredIssues = [];
+  issues.forEach((issue) => {
+    if (checkedAuthors.includes(issue.author)) {
+      filteredIssues.push(issue);
+    }
+  });
+
+  /* clear issues display before rendering filtered issues */
+  issuesDisplayDiv.innerHTML = '';
+  /* render filtered issues */
+  filteredIssues.forEach((issue) => {
+    /* collect all labels in HTML format */
+    let labelsHTML = '';
+    issue.labels.forEach((label) => {
+      labelsHTML += `<span>${label}</span>`;
+    });
+    /* this is _issue.ejs code */
+    issuesDisplayDiv.innerHTML += `
+    <div class="issue-container flex" id="issue-${issue._id}">
+    <div class="issue-title">${issue.title}</div>
+    <div class="issue-labels flex">
+    ${labelsHTML}
+    </div>
+    <div class="issue-description">${issue.description}</div>
+    <div class="issue-author">Author: <span>${issue.author}</span></div>
+    <div class="">
+    <form action="/issue/delete/${issue._id}" method="post" class="">
+      <button id="" class="primary-btn delete-btn">Delete Issue</button>
+    </form>
+    </div>
+    </div>
+    `;
+  });
+});
