@@ -143,3 +143,26 @@ populateAuthorForm.addEventListener('submit', (event) => {
     `;
   });
 });
+
+const filterByLabelBtn = document.getElementById('filter-by-label-btn');
+const modalContainerFilterByLabel = document.getElementById(
+  'modal-container-filter-label'
+);
+const filterByLabelCloseModalBtn = document.getElementById(
+  'filter-label-close-modal-btn'
+);
+const closeFilterByLabelModal = () => {
+  modalContainerFilterByLabel.classList.remove('show-modal');
+};
+/* show modal when filter by label button clicked */
+filterByLabelBtn.addEventListener('click', () => {
+  modalContainerFilterByLabel.classList.add('show-modal');
+});
+/* hide modal and clear details when close button clicked */
+filterByLabelCloseModalBtn.addEventListener('click', () => {
+  closeFilterByLabelModal();
+  /* remove any checked boxes from modal */
+  for (checkbox of checkboxLabels) {
+    checkbox.checked = false;
+  }
+});

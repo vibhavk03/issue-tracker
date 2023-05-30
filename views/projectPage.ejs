@@ -40,6 +40,9 @@
             <button id="filter-by-author-btn" class="primary-btn secondary-btn">
               Filter by Author
             </button>
+            <button id="filter-by-label-btn" class="primary-btn secondary-btn">
+              Filter by Label
+            </button>
           </div>
         </div>
 
@@ -60,7 +63,7 @@
         <div class="modal-container" id="modal-container-authors">
           <div class="modal">
             <h3>Please select Authors for filtering</h3>
-            <form action="" id="populate-author-form">
+            <form action="" id="populate-author-form" class="mg-top-2">
               <div id="populate-author-div">
                 <!-- populate author details using javascript -->
               </div>
@@ -80,6 +83,10 @@
               Close
             </button>
           </div>
+        </div>
+
+        <div class="modal-container" id="modal-container-filter-label">
+          <%- include('_filterByLabelModal') %>
         </div>
       </main>
 
