@@ -110,11 +110,18 @@ populateAuthorForm.addEventListener('submit', (event) => {
 
   /* filter issues according to checked authors */
   let filteredIssues = [];
-  issues.forEach((issue) => {
-    if (checkedAuthors.includes(issue.author)) {
-      filteredIssues.push(issue);
-    }
-  });
+  if (checkedAuthors.length === 0) {
+    /* if no authors selected for filtering but filter issues button clicked */
+    /* then display all issues */
+    filteredIssues = issues;
+  } else {
+    /* filter issues according to checked authors */
+    issues.forEach((issue) => {
+      if (checkedAuthors.includes(issue.author)) {
+        filteredIssues.push(issue);
+      }
+    });
+  }
 
   /* clear issues display before rendering filtered issues */
   issuesDisplayDiv.innerHTML = '';
