@@ -108,6 +108,11 @@ populateAuthorForm.addEventListener('submit', (event) => {
   /* close modal */
   closeAuthorModal();
 
+  /* clear all checked checkboxes */
+  for (checkbox of checkboxLabels) {
+    checkbox.checked = false;
+  }
+
   /* filter issues according to checked authors */
   let filteredIssues = [];
   if (checkedAuthors.length === 0) {
