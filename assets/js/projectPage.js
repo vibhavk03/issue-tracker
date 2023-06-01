@@ -225,7 +225,7 @@ filterByLabelForm.addEventListener('submit', (event) => {
     /* if filtered issues are zero */
     issuesDisplayDiv.innerHTML = `
       <div class="issue-container flex no-issues-after-filter">
-        <div>No Issues</div>
+        <div><h3>No Issues</h3></div>
       </div>
     `;
   } else {
