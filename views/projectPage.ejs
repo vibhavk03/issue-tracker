@@ -26,11 +26,13 @@
         </div>
 
         <div id="issues-header" class="flex">
-          <% if (project.issues.length > 0) { %>
-          <h3>Project issues</h3>
-          <% } else { %>
-          <h3>No issues added yet!</h3>
-          <% } %>
+          <div id="issues-header-heading" class="flex">
+            <% if (project.issues.length > 0) { %>
+            <h3>Project issues</h3>
+            <% } else { %>
+            <h3>No issues added yet!</h3>
+            <% } %>
+          </div>
           <div id="issues-header-btns" class="flex">
             <form action="/project/<%= project._id %>" method="get" class="">
               <button id="" class="primary-btn secondary-btn">

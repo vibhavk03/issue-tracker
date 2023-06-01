@@ -203,10 +203,18 @@ main {
 #issues-header {
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 #issues-header-btns {
   gap: 50px;
+}
+#issues-header-heading {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+  justify-content: center;
+  border-radius: 10px;
+  width: auto;
+  padding: 20px;
 }
 /* .project-author span {
   text-transform: uppercase;
