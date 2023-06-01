@@ -178,3 +178,80 @@ filterByLabelCloseModalBtn.addEventListener('click', () => {
     checkbox.checked = false;
   }
 });
+
+const filterByLabelForm = document.getElementById('filter-label-form');
+/* when filter by label form is submitted */
+filterByLabelForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  /* get checked authors from form */
+  const checkedLabels = Array.from(
+    document.querySelectorAll('input[type=checkbox]:checked')
+  ).map((item) => item.value);
+
+  /* close modal */
+  closeFilterByLabelModal();
+
+  /* clear all checked checkboxes */
+  for (checkbox of checkboxLabels) {
+    checkbox.checked = false;
+  }
+
+  /* filter issues according to checked labels */
+  let filteredIssues = [];
+  if (checkedLabels.length === 0) {
+    /* if no labels selected for filtering but filter issues button clicked */
+    /* then display all issues */
+    filteredIssues = issues;
+  } else {
+    /* filter issues according to labels */
+    issues.forEach((issue) => {
+      const issueLabels = issue.labels;
+      checkedLabels.forEach((checkedLabel) => {
+        if (
+          issueLabels.includes(checkedLabel) &&
+          !filteredIssues.includes(issue)
+        ) {
+          /* if any checked label is included in issues label -> filter that issue */
+          filteredIssues.push(issue);
+        }
+      });
+    });
+  }
+
+  /* clear issues display before rendering filtered issues */
+  issuesDisplayDiv.innerHTML = '';
+  if (filteredIssues.length === 0) {
+    /* if filtered issues are zero */
+    issuesDisplayDiv.innerHTML = `
+      <div class="issue-container flex no-issues-after-filter">
+        <div>No Issues</div>
+      </div>
+    `;
+  } else {
+    /* render filtered issues */
+    filteredIssues.forEach((issue) => {
+      /* collect all labels in HTML format */
+      let labelsHTML = '';
+      issue.labels.forEach((label) => {
+        labelsHTML += `<span>${label}</span>`;
+      });
+      /* this is _issue.ejs code */
+      issuesDisplayDiv.innerHTML += `
+      <div class="issue-container flex" id="issue-${issue._id}">
+      <div class="issue-title">${issue.title}</div>
+      <div class="issue-labels flex">
+      ${labelsHTML}
+      </div>
+      <div class="issue-description">${issue.description}</div>
+      <div class="issue-author">Author: <span>${issue.author}</span></div>
+      <div class="">
+      <form action="/issue/delete/${issue._id}" method="post" class="">
+        <button id="" class="primary-btn delete-btn">Delete Issue</button>
+      </form>
+      </div>
+      </div>
+      `;
+    });
+  }
+});
