@@ -26,26 +26,7 @@
         </div>
 
         <div id="issues-header" class="flex">
-          <div id="issues-header-heading" class="flex">
-            <% if (project.issues.length > 0) { %>
-            <h3>Project issues</h3>
-            <% } else { %>
-            <h3>No issues added yet!</h3>
-            <% } %>
-          </div>
-          <div id="issues-header-btns" class="flex">
-            <form action="/project/<%= project._id %>" method="get" class="">
-              <button id="" class="primary-btn secondary-btn">
-                Show All Issues
-              </button>
-            </form>
-            <button id="filter-by-author-btn" class="primary-btn secondary-btn">
-              Filter by Author
-            </button>
-            <button id="filter-by-label-btn" class="primary-btn secondary-btn">
-              Filter by Label
-            </button>
-          </div>
+          <%- include('_issuesHeader') %>
         </div>
 
         <div id="issues-display" class="flex">
