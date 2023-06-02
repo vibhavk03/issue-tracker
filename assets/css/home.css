@@ -66,10 +66,6 @@ header a {
   color: white;
 }
 
-main {
-  /* height: 10vh; */
-}
-
 /* modal styles */
 .modal-container {
   background-color: rgba(0, 0, 0, 0.3);
@@ -171,6 +167,7 @@ main {
   justify-content: space-between;
 }
 
+/* issues display */
 #issues-display {
   padding: 20px 0px;
   flex-direction: column;
@@ -217,9 +214,6 @@ main {
   width: auto;
   padding: 20px;
 }
-/* .project-author span {
-  text-transform: uppercase;
-} */
 .no-issues-after-filter {
   margin-top: 100px;
   justify-content: center;
