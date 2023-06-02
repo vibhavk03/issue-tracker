@@ -1,6 +1,7 @@
 # Issue Tracker Project
 
 ![](assets/screenshots/home_page.JPG)
+
 ![](assets/screenshots/new_project_modal.JPG)
 
 Access this project live here -->
@@ -10,6 +11,7 @@ For each of the projects you can create ad delete issues.
 You can filter these issues based on labels or authors.
 
 ![](assets/screenshots/project_page.JPG)
+
 ![](assets/screenshots/new_issue_modal.JPG)
 
 ## Tech Stack
