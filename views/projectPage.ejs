@@ -30,7 +30,8 @@
         </div>
 
         <div id="issues-display" class="flex">
-          <% for (issue of project.issues) { %> <%- include('_issue') %> <% } %>
+          <% const reversedIssues = [...project.issues].reverse() %> <% for
+          (issue of reversedIssues) { %> <%- include('_issue') %> <% } %>
         </div>
 
         <div class="modal-container" id="modal-container-issue">
