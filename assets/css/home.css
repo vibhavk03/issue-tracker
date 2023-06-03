@@ -65,6 +65,10 @@ header {
 header a {
   color: white;
 }
+.no-projects-added {
+  align-content: center;
+  height: 80vh;
+}
 
 /* modal styles */
 .modal-container {

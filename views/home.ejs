@@ -23,9 +23,20 @@
       </header>
 
       <main>
-        <div id="projects-display" class="flex">
-          <% for (project of projects) { %> <%- include('_project') %> <% } %>
+        <% if (projects.length === 0) { %>
+        <div id="projects-display" class="flex no-projects-added">
+          <div class="project-container flex">
+            <div class="project-title">No Projects added yet !</div>
+            <div class="project-description">
+              Create Projects by clicking on top right Create New Project button
+            </div>
+          </div>
         </div>
+        <% } else { %>
+        <div id="projects-display" class="flex">
+          <% for (project of projects) { %> <%-include('_project') %> <% } %>
+        </div>
+        <% } %>
 
         <div class="modal-container" id="modal-container">
           <%- include('_newProjectModal') %>
