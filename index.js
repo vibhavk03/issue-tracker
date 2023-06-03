@@ -7,12 +7,12 @@ const db = require('./config/mongoose.js');
 
 const app = express();
 
-// including static assets
+/* including static assets */
 app.use(express.static('./assets'));
 
-// setting app engine as ejs
+/* setting app engine as ejs */
 app.set('view engine', 'ejs');
-// refrencing views folder
+/* refrencing views folder */
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
