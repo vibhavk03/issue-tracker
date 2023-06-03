@@ -1,13 +1,13 @@
 # Issue Tracker Project
 
+Access this project live here --> https://drab-gray-pelican-kilt.cyclic.app/
+
 ![](assets/screenshots/home_page.JPG)
 
 ![](assets/screenshots/new_project_modal.JPG)
 
-Access this project live here -->
-
 This is a issue tracker portal where you can create and delete multiple projects.
-For each of the projects you can create ad delete issues.
+For each of the projects you can create and delete issues.
 You can filter these issues based on labels or authors.
 
 ![](assets/screenshots/project_page.JPG)
